@@ -6,8 +6,10 @@ public class PalindromeValidator {
 		
 		if (string.length() == 1) {
 			return true;
+		} else if (string.length() == 2 && string.charAt(0) == (string.charAt(1))) {
+			return true;
 		} else {
-			return false;
+			return false; 
 		}
 	}
 }
