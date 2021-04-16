@@ -91,6 +91,34 @@ class PalindromeValidatorTest {
         boolean expectedResult = false;
         assertEquals(expectedResult, actualResult);
 
+    } 
+	
+	@Test
+    void GivenASentencePalindromeStringWhenValidatingPalindromeThenTrue() {
+		
+        // Given
+        String string = "a man a plan a canal panama";
+        // When
+        boolean actualResult = validator.validate(string);
+
+        // Then
+        boolean expectedResult = true;
+        assertEquals(expectedResult, actualResult);
+
+    }
+	
+	@Test
+    void GivenANonPalindromeStringWhenValidatingPalindromeThenFalse() {
+		
+        // Given
+        String string = "a man in a plan a canal panama";
+        // When
+        boolean actualResult = validator.validate(string);
+
+        // Then
+        boolean expectedResult = false;
+        assertEquals(expectedResult, actualResult);
+
     }
 
 }
