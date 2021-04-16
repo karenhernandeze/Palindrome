@@ -52,7 +52,7 @@ class PalindromeValidatorTest {
 	}
 	
 	@Test
-    void Given_3LetterPalindromeString_When_ValidatingPalindrome_Then_True() {
+    void Given3LettersPalindromeStringWhenValidatingPalindromeThenTrue() {
 		
         // Given
         String string = "aba";
@@ -61,6 +61,34 @@ class PalindromeValidatorTest {
 
         // Then
         boolean expectedResult = true;
+        assertEquals(expectedResult, actualResult);
+
+    }
+	
+	@Test
+    void Given4LettersPalindromeStringWhenValidatingPalindromeThenTrue() {
+		
+        // Given
+        String string = "abba";
+        // When
+        boolean actualResult = validator.validate(string);
+
+        // Then
+        boolean expectedResult = true;
+        assertEquals(expectedResult, actualResult);
+
+    }
+	
+	@Test
+    void Given4LettersPalindromeStringWhenValidatingPalindromeThenFalse() {
+		
+        // Given
+        String string = "abda";
+        // When
+        boolean actualResult = validator.validate(string);
+
+        // Then
+        boolean expectedResult = false;
         assertEquals(expectedResult, actualResult);
 
     }
